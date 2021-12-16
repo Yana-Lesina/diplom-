@@ -1,5 +1,5 @@
-import one from './modules/one'
+import callOrder from './modules/callOrder'
 import two from './modules/two'
 
-one();
+callOrder();
 two();
