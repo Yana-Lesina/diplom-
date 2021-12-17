@@ -1,22 +1,36 @@
 const callOrder  = () => {
 
-  const callOrderbtn = document.querySelector('.col-sm-12 > .button');
+  const orderBtn = document.querySelector('.col-sm-12 > .button');
+  const closeBtns = document.querySelectorAll('[title="Close"]');
+  const servicesContainer = document.getElementById('services');
   const headerModal = document.querySelector('.header-modal');
+  const servicesModal = document.querySelector('.services-modal');
   const overlay = document.querySelector('.overlay');
-  const modlCloseBtn = document.querySelector('.header-modal__close');
 
- 
-  callOrderbtn.addEventListener('click', () => {
-    console.log('!!!')
+  const enableModal = (elem) => {
+    elem.style.display = 'block';
     overlay.style.display = 'block';
-    headerModal.style.display = 'block';
-    
-  });
+  };
 
-  modlCloseBtn.addEventListener('click', () => {
+  const disableModal = (elem) => {
+    elem.style.display = 'none';
     overlay.style.display = 'none';
-    headerModal.style.display = 'none';
-  });
+  };
+
+  orderBtn.addEventListener('click', () => enableModal(headerModal));
+
+  servicesContainer.addEventListener('click', (e) => {
+    if(e.target.classList.contains('btn-success')) { 
+       enableModal(servicesModal);
+    }
+  })
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      if(e.target.classList.contains('header-modal__close')) disableModal(headerModal);
+      if(e.target.classList.contains('services-modal__close')) disableModal(servicesModal);
+    })
+  })
 };
 
 export default callOrder
