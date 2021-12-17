@@ -1,5 +1,5 @@
 import callOrder from './modules/callOrder'
-import two from './modules/two'
+import clientSlider from './modules/clientSlider'
 
 callOrder();
-two();
+clientSlider();
