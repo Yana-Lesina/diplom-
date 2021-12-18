@@ -8,7 +8,6 @@ const timer = (deadline) => {
   //сюда будет записано время из localeStorage и передано в timerHours,timerMinutes,timerSeconds
   //для отображения времени без скачков с 00 при перезагрузке стр
   let refresh //интервальное обновление времени
- 
 
   const checkForZero = (num) => { return num < 10 ? num = '0' + num : num };
 
@@ -17,7 +16,7 @@ const timer = (deadline) => {
     let dateNow = new Date().getTime();
     let timeRemaining = (dateStop - dateNow) / 1000;
     let days = Math.floor(timeRemaining / 86400);
-    let hours = Math.floor(timeRemaining / 60 / 60);
+    let hours = Math.floor((timeRemaining / 60 / 60) % 24);
     let minutes = Math.floor((timeRemaining / 60) % 60);
     let seconds = Math.floor(timeRemaining % 60);
 
@@ -28,14 +27,9 @@ const timer = (deadline) => {
     return { timeRemaining, days, hours, minutes, seconds }
   }
 
-  console.log(getTimeRemaining());
-
   const updateClock = function() {
     let getTime = getTimeRemaining();
-    console.log(getTime);
-    console.log(typeof getTime);
-
-
+ 
     if(getTime.timeRemaining > 0) {
       timerDays.textContent = checkForZero(getTime.days);
       timerHours.textContent = checkForZero(getTime.hours);

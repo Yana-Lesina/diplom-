@@ -64,14 +64,24 @@ h3 {
 .form-group {
   margin-bottom: 20px;
 }
-.form-control:focus {
+/* .form-control:focus {
   border-color: #00902a;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(0, 144, 42, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(0, 144, 42, 0.6);
+} */
+
+input.correct {
+  border-color: #00902a;
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(0, 144, 42, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(0, 144, 42, 0.6);
 }
+
 .form-control::-moz-placeholder {
   color: #8e8e8e;
   opacity: 1;
