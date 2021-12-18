@@ -680,6 +680,7 @@ p.services-image_mobile {
   line-height: 1.4;
   color: #546a76;
   margin-bottom: 0;
+  /*text-align: center; /* меняла */
 }
 #reviews {
   background: url("../images/review-bg.png");
@@ -1693,8 +1694,9 @@ input.error {
 .lds-ellipsis {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 25px;
+  height: 25px;
+  /*margin: 0 auto; /*меняла*/
 }
 .lds-ellipsis div {
   position: absolute;
@@ -1702,7 +1704,7 @@ input.error {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #337ab7;
+  background: #008f29;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {

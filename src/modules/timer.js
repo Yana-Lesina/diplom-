@@ -1,8 +1,8 @@
-const timer = (deadline) => {
-  const timerDays = document.querySelector('.count_1 > span');
-  const timerHours = document.querySelector('.count_2 > span');
-  const timerMinutes = document.querySelector('.count_3 > span');
-  const timerSeconds = document.querySelector('.count_4 > span');
+const timer = (countdown, deadline) => {
+  const timerDays = countdown.querySelector('.count_1 > span');
+  const timerHours = countdown.querySelector('.count_2 > span');
+  const timerMinutes = countdown.querySelector('.count_3 > span');
+  const timerSeconds = countdown.querySelector('.count_4 > span');
 
   let timeMemory = {};
   //сюда будет записано время из localeStorage и передано в timerHours,timerMinutes,timerSeconds
@@ -56,7 +56,7 @@ const timer = (deadline) => {
     timeMemory = {}
   }
 
-  refresh = setInterval(updateClock, 1000);//перезапуск функции через каждую 1 с
+  refresh = setInterval(updateClock, 1000); //перезапуск функции через каждую 1 с
 };
 
 export default timer;
