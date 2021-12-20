@@ -6,7 +6,6 @@ import calc from './modules/calc'
 import sendForm from './modules/sendForm'
 
 callOrder();
-two();
 inputs();
 clientSlider();
 
