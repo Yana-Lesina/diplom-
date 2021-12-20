@@ -1,5 +1,5 @@
 import callOrder from './modules/callOrder'
-import two from './modules/two'
+import clientSlider from './modules/clientSlider'
 import timer from './modules/timer'
 import inputs from './modules/inputs'
 import calc from './modules/calc'
@@ -8,6 +8,7 @@ import sendForm from './modules/sendForm'
 callOrder();
 two();
 inputs();
+clientSlider();
 
 const countdowns = document.querySelectorAll('.countdown');
 if(countdowns.length !== 0) {
@@ -36,5 +37,6 @@ if(forms.length !== 0) {
 } else {
   console.log('Упс.. Формы потерялись..')
 }
+
 
 
