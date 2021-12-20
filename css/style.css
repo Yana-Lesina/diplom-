@@ -499,9 +499,25 @@ input.error {
 #benefits {
   background-color: #f5f6f6;
 }
+/* ===================================== */
+/* учесть, что при перевороте экрана ширина benefitsWrap должна пересчитываться  */
 .benefits-inner {
   text-align: center;
+  overflow: hidden;
+  margin: 0 auto;
 }
+@media (max-width: 575px) {
+  .benefits-inner {
+    max-width: 185px;
+  }
+}
+@media (min-width: 576px) {
+  .benefits-inner {
+    max-width: 586px;
+  }
+}
+/* ===================================== */
+
 .benefit-image {
   margin-bottom: 22px;
 }
@@ -1598,7 +1614,8 @@ input.error {
 
 .benefits__item {
   width: 100%;
-  max-width: 185px;
+  min-width: 185px;
+  /* margin-inline: 0.6%; */
 }
 
 .benefits-arrows {
@@ -1665,10 +1682,19 @@ input.error {
   transform: rotate(90deg);
 }
 
+@media (max-width: 575px) {
+  .benefits-wrap {
+    width: 100%;
+    max-width: 185px;
+    /* overflow: hidden; */
+  }
+}
+
 @media (min-width: 576px) {
   .benefits-wrap {
     width: 100%;
     max-width: 576px;
+    /* overflow: hidden; */
   }
 }
 
@@ -1676,5 +1702,6 @@ input.error {
   .benefits-wrap {
     width: 100%;
     max-width: 576px;
+    /* overflow: hidden; */
   }
 }
