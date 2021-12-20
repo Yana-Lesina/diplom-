@@ -4,7 +4,6 @@ const timer = (countdown, deadline) => {
   const timerMinutes = countdown.querySelector('.count_3 > span');
   const timerSeconds = countdown.querySelector('.count_4 > span');
 
-  let timeMemory = {};
   //сюда будет записано время из localeStorage и передано в timerHours,timerMinutes,timerSeconds
   //для отображения времени без скачков с 00 при перезагрузке стр
   let refresh //интервальное обновление времени
@@ -19,10 +18,6 @@ const timer = (countdown, deadline) => {
     let hours = Math.floor((timeRemaining / 60 / 60) % 24);
     let minutes = Math.floor((timeRemaining / 60) % 60);
     let seconds = Math.floor(timeRemaining % 60);
-
-    //запись времени в память 
-    localStorage.clear()
-    localStorage.setItem('timeMemo', JSON.stringify( {days, hours, minutes, seconds} ));
 
     return { timeRemaining, days, hours, minutes, seconds }
   }
@@ -45,17 +40,9 @@ const timer = (countdown, deadline) => {
     }
   }
 
-  //достаём из localStorage время и записываем вместо 00
-  if(localStorage.getItem('timeMemo') !== null) {
-    timeMemory = JSON.parse(localStorage.getItem('timeMemo'));
-    timerDays.textContent = checkForZero(timeMemory.days);
-    timerHours.textContent = checkForZero(timeMemory.hours);
-    timerMinutes.textContent = checkForZero(timeMemory.minutes);
-    timerSeconds.textContent = checkForZero(timeMemory.seconds);
-  } else {
-    timeMemory = {}
-  }
+  
 
+  updateClock();
   refresh = setInterval(updateClock, 1000); //перезапуск функции через каждую 1 с
 };
 
