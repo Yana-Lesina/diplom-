@@ -5,11 +5,13 @@ import timer from './modules/timer'
 import inputs from './modules/inputs'
 import calc from './modules/calc'
 import sendForm from './modules/sendForm'
+import smoothScroll from './modules/smoothScroll'
 
 
 callOrder();
 inputs();
 clientSlider();
+smoothScroll();
 
 
 serviceSlider();
