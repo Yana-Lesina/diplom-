@@ -1,13 +1,22 @@
 import callOrder from './modules/callOrder'
 import clientSlider from './modules/clientSlider'
+import serviceSlider from './modules/serviceSlider'
 import timer from './modules/timer'
 import inputs from './modules/inputs'
 import calc from './modules/calc'
 import sendForm from './modules/sendForm'
 
+
 callOrder();
 inputs();
 clientSlider();
+
+
+serviceSlider();
+window.addEventListener('resize', () => {
+  serviceSlider(); 
+}, false);
+
 
 const countdowns = document.querySelectorAll('.countdown');
 if(countdowns.length !== 0) {
