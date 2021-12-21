@@ -6,13 +6,14 @@ import inputs from './modules/inputs'
 import calc from './modules/calc'
 import sendForm from './modules/sendForm'
 import smoothScroll from './modules/smoothScroll'
+import sertificates from './modules/sertificates'
 
 
 callOrder();
 inputs();
 clientSlider();
 smoothScroll();
-
+sertificates();
 
 serviceSlider();
 window.addEventListener('resize', () => {

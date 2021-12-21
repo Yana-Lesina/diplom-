@@ -39,6 +39,12 @@ h3 {
 .img-responsive {
   display: inline-block;
 }
+/* ============================= */
+.sertific-img {
+  z-index: 10;
+}
+
+/* ============================ */
 .phone-icon {
   background: url("../images/phone.png") no-repeat;
   display: inline-block;
@@ -817,6 +823,7 @@ p.services-image_mobile {
   top: 0;
   left: 0;
   opacity: 0;
+  z-index: -1;
 }
 .document-inner:hover .document-overlay {
   opacity: 1;
