@@ -24,7 +24,7 @@ window.addEventListener('resize', () => {
 const countdowns = document.querySelectorAll('.countdown');
 if(countdowns.length !== 0) {
   countdowns.forEach(countdown => {
-    timer(countdown, '29 december 2021 23:30:00'); 
+    timer(countdown, '30 july 2022 23:30:00'); 
   })
 }
 
